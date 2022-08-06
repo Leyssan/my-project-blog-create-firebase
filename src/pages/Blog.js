@@ -13,6 +13,7 @@ const Blog = () => {
     return (
         <div>
             <h1>Our news</h1>
+            <Link to="/blog/private"> Private post </Link>
             {
                 blog.map(x => (
                     <Link key={x.id} to={`/blog/${x.id}`}>
