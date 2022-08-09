@@ -25,7 +25,7 @@ const Home = ({ user }) => {
     <div className="container-fluid" style={{ marginTop: "10%" }}>
       <div className="row">
           <Card.Body>
-            <Card.Title>Welcome</Card.Title>
+            <Card.Title>Home</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">
               {user.displayName}
             </Card.Subtitle>
