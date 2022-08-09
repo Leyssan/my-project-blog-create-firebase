@@ -9,7 +9,8 @@ import {
   
   import React, { useState } from "react";
   
-  import "../App.css";
+ 
+  
   
   const Authentication = () => {
     const [name, setName] = useState("");
@@ -26,8 +27,9 @@ import {
             <div className="row">
               <div className="col col-6">
                 <Card>
+                <Card.Title>User Login</Card.Title>
                   <Card.Body>
-                    <Card.Title>User Login</Card.Title>
+                    
                     <div>
                       <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
@@ -37,9 +39,7 @@ import {
                           value={loginEmail}
                           onChange={(e) => setLoginEmail(e.target.value)}
                         />
-                        <Form.Text className="text-muted">
-                          We'll never share your email with anyone else.
-                        </Form.Text>
+            
                       </Form.Group>
   
                       <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -51,8 +51,6 @@ import {
                           onChange={(e) => setLoginPassword(e.target.value)}
                         />
                       </Form.Group>
-                      <hr style={{ margin: "5%" }} />
-  
                       <div className="d-grid gap-2">
                         <Button
                           variant="outline-success"
@@ -74,6 +72,7 @@ import {
                   </Card.Body>
                 </Card>
               </div>
+              <hr style={{ margin: "5%" }} />
               <div className="col col-6">
                 <Card>
                   <Card.Body>
@@ -108,8 +107,6 @@ import {
                           onChange={(e) => setPassword(e.target.value)}
                         />
                       </Form.Group>
-                      <hr style={{ margin: "5%" }} />
-  
                       <div className="d-grid gap-2">
                         <Button
                           variant="outline-danger"
@@ -124,6 +121,7 @@ import {
                     </div>
                   </Card.Body>
                 </Card>
+                <hr style={{ margin: "5%" }} />
               </div>
             </div>
           </div>
