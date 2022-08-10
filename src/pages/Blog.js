@@ -12,7 +12,7 @@ const Blog = () => {
 
     return (
         <div>
-            <h1>Our news</h1>
+            <h1>Author's blog</h1>
             <Link to="/blog/private"> Private post </Link>
             {
                 blog.map(x => (

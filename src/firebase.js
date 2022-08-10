@@ -69,3 +69,7 @@ export const registerWithEmailAndPassword = async (name, email, password) => {
   }
 
 }
+
+
+
+export {db}

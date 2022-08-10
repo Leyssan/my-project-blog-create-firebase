@@ -15,6 +15,7 @@ import { Private } from './pages/Private'
 import { RequireAuth } from 'hok/RequireAuth';
 import  { ProviderAuth } from  './hok/ProviderAuth'
 import { Authentication } from 'pages/Authentication';
+import { BlogPrivate } from 'pages/BlogPrivate'
 // "/" === index
 function App() {
   const [user, setUser] = useState(null);
@@ -34,8 +35,9 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="blog" element={<Blog />} />
           <Route path="blog/:id" element={<DynamicPage />} />
+          <Route path="blog-private" element={<BlogPrivate />} />
           <Route path="login" element={<Login />} />
-          <Route path="blog/private" element={
+          <Route path="blog/private/:id" element={
             <RequireAuth>
               <Private />
             </RequireAuth>

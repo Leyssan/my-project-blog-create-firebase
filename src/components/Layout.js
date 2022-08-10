@@ -13,7 +13,9 @@ const Layout = () => {
             <Outlet />
         </main>
 
-        <footer className="container">Blog 2022</footer>
+        <div class="app-copyright">
+  Copyright © 2022 <span>My blog</span>
+  </div>
         </>
     )
 }

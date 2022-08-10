@@ -17,6 +17,7 @@ import { auth } from "../firebase";
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { Link } from 'react-router-dom';
 
 import "../App.css";
 
@@ -25,7 +26,8 @@ const Home = ({ user }) => {
     <div className="container-fluid" style={{ marginTop: "10%" }}>
       <div className="row">
           <Card.Body>
-            <Card.Title>Home</Card.Title>
+            
+            <Link to="/blog-private"> Create post </Link>
             <Card.Subtitle className="mb-2 text-muted">
               {user.displayName}
             </Card.Subtitle>
