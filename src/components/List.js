@@ -10,10 +10,10 @@ const List = ({ items, removeItem, editItem }) => {
             <p className="title">{title}</p>
             <div className="btn-container">
             <button type="button" className="edit-btn" onClick={() => editItem(id)}>
-                edit
+                Edit
               </button>
               <button type="button" className="delete-btn" onClick={() => removeItem(id)}>
-                delete
+                Delete
               </button>
             </div>
           </article>

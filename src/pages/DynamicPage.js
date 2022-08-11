@@ -19,7 +19,7 @@ const backButton = () => navigate(-1)
                 <>
                     <h1>{blog.title}</h1>
                     <p>{blog.body}</p>
-                    <Link to={`/blog/${id}/edit`}>Edit this post</Link>
+                   
                 </>
             )}
             <button onClick={backButton}>Back</button>
