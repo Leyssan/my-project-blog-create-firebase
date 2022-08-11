@@ -20,7 +20,7 @@ function BlogPrivate() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name) {
-      showAlert(true, "danger", "please enter value");
+      showAlert(true, "danger", "Please enter value");
     } else if (name && isEditing) {
       setList(
         list.map((item) => {
@@ -33,9 +33,9 @@ function BlogPrivate() {
       setName("");
       setEditID(null);
       setIsEditing(false);
-      showAlert(true, "success", "value changed");
+      showAlert(true, "success", "Value changed");
     } else {
-      showAlert(true, "success", "item added to the list");
+      showAlert(true, "success", "Item added to the list");
       const newItem = { id: new Date().getTime().toString(), title: name };
 
       setList([...list, newItem]);
@@ -47,11 +47,11 @@ function BlogPrivate() {
     setAlert({ show, type, msg });
   };
   const clearList = () => {
-    showAlert(true, "danger", "empty list");
+    showAlert(true, "danger", "Empty list");
     setList([]);
   };
   const removeItem = (id) => {
-    showAlert(true, "danger", "item removed");
+    showAlert(true, "danger", "Item removed");
     setList(list.filter((item) => item.id !== id));
   };
   const editItem = (id) => {
@@ -70,9 +70,9 @@ function BlogPrivate() {
 
         <h3>Create Post</h3>
         <div className="form-control">
-          <input type="text" className="grocery" placeholder="Input your Todo List" value={name} onChange={(e) => setName(e.target.value)} />
+          <input type="text" className="grocery" placeholder="Input your post" value={name} onChange={(e) => setName(e.target.value)} />
           <button type="submit" className="submit-btn">
-            {isEditing ? "edit" : "Submit!"}
+            {isEditing ? "edit" : "Submit"}
           </button>
         </div>
       </form>

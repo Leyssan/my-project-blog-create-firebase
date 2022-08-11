@@ -21,13 +21,13 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = getFirestore();
 
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: 'select_account' });
+//const provider = new firebase.auth.GoogleAuthProvider();
+//provider.setCustomParameters({ prompt: 'select_account' });
 
 export const auth = firebase.auth();
 export default firebase;
 
-export const signInWithGoogle = async () => {
+/*export const signInWithGoogle = async () => {
   try {
     const res = await auth.signInWithPopup(provider);
     const user = res.user;
@@ -44,7 +44,7 @@ export const signInWithGoogle = async () => {
   } catch (err) {
     alert(err.message);
   }
-};
+}; */
 
 export const signInWithEmailAndPassword = async (email, password) => {
   try {
@@ -62,7 +62,7 @@ export const registerWithEmailAndPassword = async (name, email, password) => {
       uid: user.uid,
       name,
       authProvider: "local",
-      email,
+      email: user.email,
     });
   } catch (err) {
     alert(err.message);

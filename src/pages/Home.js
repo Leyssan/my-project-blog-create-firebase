@@ -1,18 +1,4 @@
-/*const Home = () => {
-    return(
-        <div>
-            <h1>
-               Home
-            </h1>
-            <p>
-                Hello, Misha
-            </p>
-        </div>
 
-        
-    )
-}
-export {Home} */
 import { auth } from "../firebase";
 import React from "react";
 import Card from "react-bootstrap/Card";
@@ -29,16 +15,16 @@ const Home = ({ user }) => {
             
             <Link to="/blog-private"> Create post </Link>
             <Card.Subtitle className="mb-2 text-muted">
-              {user.displayName}
+              {user.email}
             </Card.Subtitle>
-            <img src={user.photoURL} alt="" />
+          
             <Button
             style={{margin: '5%'}}
             variant="outline-danger"
             type="submit"
             onClick={() => auth.signOut()}
           >
-            Sign Out
+            Sign out
           </Button>
           </Card.Body>
       </div>

@@ -1,5 +1,5 @@
 import {
-    signInWithGoogle,
+//signInWithGoogle,
     signInWithEmailAndPassword,
     registerWithEmailAndPassword
   } from "../firebase";
@@ -61,12 +61,7 @@ import {
                         >
                           Login
                         </Button>
-                        <Button
-                          variant="outline-primary"
-                          onClick={signInWithGoogle}
-                        >
-                          <i className="fab fa-google"></i>Sign-in with Goolge
-                        </Button>
+                       
                       </div>
                     </div>
                   </Card.Body>
@@ -77,7 +72,7 @@ import {
                 <Card>
                   <Card.Body>
                     <Card.Title>User Registration</Card.Title>
-                    <Card.Text>First time visiting? register Here</Card.Text>
+                 
                     <div>
                       <Form.Group className="mb-3" controlId="formBasicName">
                         <Form.Label>Name</Form.Label>
