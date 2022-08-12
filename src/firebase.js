@@ -1,6 +1,6 @@
 
 import firebase from "firebase/compat/app";
-import { getFirestore, collection, addDoc, where, query, getDocs} from "firebase/firestore"
+import { getFirestore, collection, addDoc } from "firebase/firestore"
 import "firebase/compat/auth";
 
 

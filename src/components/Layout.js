@@ -1,12 +1,13 @@
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
+//const setActive = ({isActive}) => ({color: isActive ?'var(--color-active)' : 'white'})
 const Layout = () => {
     return (
         <>
         <header>
-            <Link to="/">Home</Link>
-            <Link to="/blog">Blog</Link>
-            <Link to="/about">About</Link>
+            <NavLink to="/" style={({isActive}) => ({color: isActive ? 'var(--color-active)' : 'white' })}>Home</NavLink>
+            <NavLink to="/blog" style={({isActive}) => ({color: isActive ? 'var(--color-active)' : 'white' })}>Blog</NavLink>
+            <NavLink to="/about"style={({isActive}) => ({color: isActive ? 'var(--color-active)' : 'white' })} >About</NavLink>
         </header>
 
         <main className="container">

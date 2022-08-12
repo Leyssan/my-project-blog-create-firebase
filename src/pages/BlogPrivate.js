@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import List from "../components/List";
 import Alert from "../components/Alert";
-//import "./App.css";
 
+import { auth } from "../firebase";
+
+// The localStorage object allows you to save key/value pairs in the browser.
 const getLocalStorage = () => {
   let list = localStorage.getItem("list");
   if (list) {
@@ -10,13 +12,19 @@ const getLocalStorage = () => {
   } else {
     return [];
   }
-};
-function BlogPrivate() {
+}
+
+
+function BlogPrivate({ user }) {
+
+
   const [name, setName] = useState("");
   const [list, setList] = useState(getLocalStorage());
   const [isEditing, setIsEditing] = useState(false);
   const [editID, setEditID] = useState(null);
   const [alert, setAlert] = useState({ show: false, msg: "", type: "" });
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name) {
@@ -63,12 +71,20 @@ function BlogPrivate() {
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list));
   }, [list]);
+
+
+
   return (
     <section className="section-center">
       <form className="grocery-form" onSubmit={handleSubmit}>
         {alert.show && <Alert {...alert} removeAlert={showAlert} list={list} />}
 
-        <h3>Create Post</h3>
+       
+          
+          <h3>
+              Welcome {user.email}
+               
+            </h3>
         <div className="form-control">
           <input type="text" className="grocery" placeholder="Input your post" value={name} onChange={(e) => setName(e.target.value)} />
           <button type="submit" className="submit-btn">
@@ -81,6 +97,14 @@ function BlogPrivate() {
           <List items={list} removeItem={removeItem} editItem={editItem} />
           <button className="clear-btn" onClick={clearList}>
             Clear items
+          </button>
+          <hr style={{ margin: "5%" }} />
+          <button
+            type="submit"
+            onClick={() => auth.signOut()}
+          >
+
+            Sign out
           </button>
         </div>
       )}
